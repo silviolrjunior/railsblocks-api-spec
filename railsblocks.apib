@@ -1,0 +1,70 @@
+FORMAT: 1A
+
+# Companies [/companies]
+
+## Creating a Company [POST]
+
++ Request (application/json)
+    + Headers
+
+            Accept: application/json
+            Content-Length: 92
+
+    + Body
+
+            {
+                "company": {
+                    "name": "Foo Inc.",
+                }
+            }
+
++ Response 201
+
+  ```
+  {
+    "name": "Foo Inc.",
+    "created_at": "2013-11-01T16:18:08.275Z",
+    "updated_at":"2013-11-01T16:18:08.275Z"
+  }
+  ```  
+
+## List all Companies [GET]
+
++ Response 200 (application/json)
+
+            [{
+                "name": "Foo Inc."
+            }]
+
+# Company [/companies/{id}]
+
++ Parameters
+  + id (required, number, `42`)
+
+## Get a Company [GET]
+
++ Response 200 (application/json)
+
+            {
+                "id": 13,
+                "name": "Foo Inc."
+            }
+
+## Update a Company [PUT]
+
++ Request (application/json)
+
+            {
+                "name": "Foo Inc."
+            }
+
++ Response 200 (application/json)
+
+            {
+                "id": 42,
+                "name": "Foo Inc."
+            }
+
+## Delete a Company [DELETE]
+
++ Response 204
