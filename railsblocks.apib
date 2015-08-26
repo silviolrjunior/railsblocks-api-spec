@@ -68,3 +68,24 @@ FORMAT: 1A
 ## Delete a Company [DELETE]
 
 + Response 204
+
+# Companies [/reseller/companies]
+
+## Company change theme [PUT]
+
++ Request (application/json)
+
+            {
+                "company":{
+                    "theme": "black"
+                }
+            }
+
++ Response 200 (application/json)
+
+            {
+                "company":{
+                    "name": "Foo Inc.",
+                    "theme": "black"
+                }
+            }
