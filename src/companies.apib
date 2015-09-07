@@ -1,0 +1,91 @@
+# Companies [/companies]
+
+## Creating a Company [POST]
+
++ Request (application/json)
+    
+            {
+                "name": "Foo Inc.",
+                "domain": "foo",
+                "tenant_id": 2
+            }
+            
+
++ Response 201
+
+            {
+                "name": "Foo Inc.",
+                "created_at": "2013-11-01T16:18:08.275Z",
+                "updated_at":"2013-11-01T16:18:08.275Z",
+                "theme": "default"
+            }
+
+## List all Companies [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+            [{
+                "id": 1,
+                "name": "Foo Inc.",
+                "domain": "foo",
+                "created_at": "2013-11-01T16:18:08.275Z",
+                "updated_at":"2013-11-01T16:18:08.275Z",
+                "theme": "default"
+            }]
+
+# Company [/companies/{id}]
+
++ Parameters
+  + id (numeric, required, `28`) ... ID of the Company
+
+## Get a Company [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+            {
+                "name": "Foo Inc.",
+                "domain": "foo",
+                "created_at": "2013-11-01T16:18:08.275Z",
+                "updated_at":"2013-11-01T16:18:08.275Z",
+                "theme": "default"
+            }
+
+## Update a Company [PUT]
+
++ Request (application/json)
+    
+            {
+                "name": "New Name."
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+            {
+                "name": "New Name.",
+                "domain": "foo",
+                "created_at": "2013-11-01T16:18:08.275Z",
+                "updated_at":"2013-11-01T16:18:08.275Z",
+                "theme": "default"
+            }
+
+## Company change theme [PUT]
+
++ Request (application/json)
+    
+            {
+                "theme": "New Theme"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+            {
+                "name": "New Name.",
+                "domain": "foo",
+                "created_at": "2013-11-01T16:18:08.275Z",
+                "updated_at":"2013-11-01T16:18:08.275Z",
+                "theme": "New Theme"
+            }
+
+### Delete a company [DELETE]
+
++ Response 204
